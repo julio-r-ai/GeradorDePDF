@@ -1,3 +1,5 @@
+const {default: jsPDF} = require("jspdf");
+
 function converterImagem(){ //função convertaer imagem
 
     //imprime o tamanho do arquivo
@@ -9,9 +11,17 @@ function converterImagem(){ //função convertaer imagem
         let carregarImagem = receberArquivo[0];
         console.log(carregarImagem);  
         
-        let lerArquivo = new FileReader();
+       let arquivoLer = new FileReader();
 
-        
+        arquivoLer.onload = function(arquivoCarregadoEvento){
+            let srcDados = arquivoCarregadoEvento.target.result;
+            console.log(srcDados);  
+        }
+        let doc = new jsPDF();
+
+        doc.text('arquivoEmPDF');
+        doc.addImage();
+
     };
 
 };
