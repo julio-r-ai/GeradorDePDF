@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="asserts/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
     <script src="asserts/js/script.js" defer></script>
     <title>Meu PDF</title>
 </head>
@@ -12,8 +13,6 @@
     
 
     <header></header>
-
-    
 
         <div class="box1">
 
@@ -32,7 +31,44 @@
         </div>
 
     <div id=""></div>     
-  
+
+};
+
+    <script>
+
+        function converterImagem(){ //função convertaer imagem
+
+                //imprime o tamanho do arquivo
+            let receberArquivo =  document.querySelector("#imagem").files; 
+
+                //imprime os dados sobre o arquivos
+            if(receberArquivo.length > 0){ 
+
+            let carregarImagem = receberArquivo[0]; 
+                    
+                let arquivoLer = new FileReader();
+
+                    arquivoLer.onload = function(arquivoCarregadoEvento){
+                        
+                        let imagemBase64 = arquivoCarregadoEvento.target.result;
+
+                        let doc = new jsPDF();
+
+                        doc.text('pdfGerado');
+
+                        doc.addImage(imagemBase64, 'JPEG', 15, 40, 100, 80);   
+
+                        doc.save('julio.pdf')
+
+                    } 
+                    
+                arquivoLer.readAsDataURL(carregarImagem);
+
+            };
+
+        };
+
+    </script>
 
 </body>
 </html>
