@@ -12,7 +12,7 @@ header{
 }
 
 .box1{
-    background-color: #f0eae7;
+    background-color: #d1cac7;
     width: 700px;
     max-width: 100%;
     margin: auto;
@@ -66,7 +66,10 @@ header{
 }
 
 .img{
-    gap: 80px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    
 }
 
 .img img{
