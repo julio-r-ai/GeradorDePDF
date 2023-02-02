@@ -1,5 +1,5 @@
 # GeradorDePDF
-Gerador de PDF com JavaScript puro
+Gerador de PDF com JavaScript
 
 ## Sobre o projeto
 Um geredor de JPEG para PDF simples usando o jsPDF que é um projeto open source disponível no GitHub por meio da licença MIT.
