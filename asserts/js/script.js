@@ -7,9 +7,9 @@ function converterImagem(){ //função convertaer imagem
             //imprime os dados sobre o arquivos
             if(receberArquivo.length > 0){ 
 
-                 let carregarImagem = receberArquivo[0]; 
+                let carregarImagem = receberArquivo[0]; 
                 
-               let arquivoLer = new FileReader();
+                let arquivoLer = new FileReader();
 
                 arquivoLer.onload = function(arquivoCarregadoEvento){
                 
